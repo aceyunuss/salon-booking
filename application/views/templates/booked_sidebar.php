@@ -8,6 +8,7 @@
                     <ul id="sidebarnav" class="p-t-30">
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url('booking/about');?>" aria-expanded="false"><i class="fas fa-home"></i><span class="hide-menu">About Us</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url('booking/index');?>" aria-expanded="false"><i class="fas fa-file-alt"></i><span class="hide-menu">Booking</span></a></li>
+                        <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url('booking/cancel');?>" aria-expanded="false"><i class="fas fa-share"></i><span class="hide-menu">Cancel Booking</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url('booking/complaint');?>" aria-expanded="false"><i class="fas fa-comments"></i><span class="hide-menu">Complaint</span></a></li>
                         <li class="sidebar-item"> <a class="sidebar-link waves-effect waves-dark sidebar-link" href="<?= base_url();?>" aria-expanded="false"><i class=" fas fa-sign-out-alt"></i><span class="hide-menu">Back</span></a></li>
                         

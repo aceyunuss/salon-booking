@@ -43,6 +43,19 @@ class Category_model extends CI_Model{
                     ->like("date", $date)
                     ->get("booking");
     }
+
+    public function check_exist($name, $date)
+    {
+        return $this->db
+                    ->where(['lower(name)' => strtolower($name)])
+                    ->like("date", $date)
+                    ->get("booking");
+    }
+
+    public function get_booking($id)
+    {
+        return $this->db->get_where("booking", ['id'=>$id]);
+    }
  
 }
  

@@ -115,6 +115,10 @@
             }); 
              
         });
+        
+    $('html, body').animate({
+        scrollTop: $("#zero_config").offset().top
+    }, 2000);
 </script>
 
 </body>
