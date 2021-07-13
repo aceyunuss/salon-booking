@@ -38,6 +38,11 @@ class Category_model extends CI_Model{
     }
 
     public function check_avail($date)
+    {
+        return $this->db
+                    ->like("date", $date)
+                    ->get("booking");
+    }
  
 }
  

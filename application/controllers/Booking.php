@@ -35,9 +35,21 @@ class Booking extends CI_Controller {
                 $category_id    = $this->input->post('category',TRUE);
                 $service_id = $this->input->post('service',TRUE);
                 $date = $this->input->post('date',TRUE);
-                $this->category_model->save_service($name,$address,$phone,$category_id,$service_id,$date);
-                $this->session->set_flashdata('msg','<div class="alert alert-success">Booking Success! <?php echo $date;?></div>');
+
+                $dt = substr(str_replace("T", " ", $date), 0, 13);
+                
+                $booked = $this->category_model->check_avail($dt)->row_array();
+                
+                if(empty($booked)){
+
+                        $this->category_model->save_service($name,$address,$phone,$category_id,$service_id,$date);
+                        $this->session->set_flashdata('msg','<div class="alert alert-success">Booking Success! <?php echo $date;?></div>');
+                }else{
+                        $this->session->set_flashdata('msg','<div class="alert alert-danger">Booking Failed! ' . $booked["date"]. ' already booked</div>');
+                }
+
                 redirect('booking');
+
         }
 
         public function about()
